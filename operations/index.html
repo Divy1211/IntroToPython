@@ -1,0 +1,1106 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../imgs/code.svg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Operations - Introduction to Python Programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ef5552">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto Slab";--md-code-font-family:"Source Code Pro"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../style.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="red">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operators" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Python Programming" class="md-header__button md-logo" aria-label="Introduction to Python Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introduction to Python Programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/Divy1211/IntroToPython/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    IntroToPython
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Python
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Python Programming" class="md-nav__button md-logo" aria-label="Introduction to Python Programming" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"/></svg>
+
+    </a>
+    Introduction to Python Programming
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Divy1211/IntroToPython/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    IntroToPython
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        What is Programming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" type="checkbox" id="__nav_1_2" checked>
+      
+      <label class="md-nav__link" for="__nav_1_2">
+        Basic Concepts of Python
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Basic Concepts of Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Basic Concepts of Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vars/" class="md-nav__link">
+        Variables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Operations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Operations
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-arithmetic-operators" class="md-nav__link">
+    1. Arithmetic Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-relational-operators" class="md-nav__link">
+    2. Relational Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-boolean-operators" class="md-nav__link">
+    3. Boolean Operators
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Boolean Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-boolean-and" class="md-nav__link">
+    3.1. The Boolean AND
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-boolean-or" class="md-nav__link">
+    3.2. The Boolean OR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-membership-operators" class="md-nav__link">
+    4. Membership Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-assignment-operation" class="md-nav__link">
+    5. The Assignment Operation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-shorthand-assignment-operators" class="md-nav__link">
+    6. Shorthand Assignment Operators
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow_control/" class="md-nav__link">
+        Flow Control
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" data-md-state="indeterminate" type="checkbox" id="__nav_1_3" checked>
+      
+      <label class="md-nav__link" for="__nav_1_3">
+        Object Oriented Programming
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Object Oriented Programming" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Object Oriented Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functions/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arguments/" class="md-nav__link">
+        Different Types of Arguments
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../classes_objects/" class="md-nav__link">
+        Classes and Objects
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inheritance/" class="md-nav__link">
+        Inheritance
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-arithmetic-operators" class="md-nav__link">
+    1. Arithmetic Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-relational-operators" class="md-nav__link">
+    2. Relational Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-boolean-operators" class="md-nav__link">
+    3. Boolean Operators
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Boolean Operators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-the-boolean-and" class="md-nav__link">
+    3.1. The Boolean AND
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-the-boolean-or" class="md-nav__link">
+    3.2. The Boolean OR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-membership-operators" class="md-nav__link">
+    4. Membership Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-the-assignment-operation" class="md-nav__link">
+    5. The Assignment Operation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-shorthand-assignment-operators" class="md-nav__link">
+    6. Shorthand Assignment Operators
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Divy1211/IntroToPython/edit/master/docs/operations.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h1>
+<p>Now that we know how to store and change the values of a variable, what can we actually do with them?</p>
+<h2 id="1-arithmetic-operators">1. Arithmetic Operators<a class="headerlink" href="#1-arithmetic-operators" title="Permanent link">&para;</a></h2>
+<p>The most obvious thing that we can do with numbers, is do arithmetic with them. Python supports the following arithmetic operations:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Operator</strong></th>
+<th align="center"><strong>Name</strong></th>
+<th align="center"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code class="highlight"><span class="o">+</span></code></td>
+<td align="center">Addition</td>
+<td align="center"><code>a+b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">-</span></code></td>
+<td align="center">Subtraction</td>
+<td align="center"><code>a-b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">*</span></code></td>
+<td align="center">Multiplication</td>
+<td align="center"><code>a*b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">/</span></code></td>
+<td align="center">Division</td>
+<td align="center"><code>a/b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">//</span></code></td>
+<td align="center">Integer Division</td>
+<td align="center"><code>a//b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">%</span></code></td>
+<td align="center">Modulo</td>
+<td align="center"><code>a%b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">**</span></code></td>
+<td align="center">Exponentiation</td>
+<td align="center"><code>a**b</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note: Integer division gives you the quotient of the division. For example: <code>17/6 = 2.833</code> but <code>17//6 = 2</code>. Modulo on the other hand, gives you the remainder of a division.</p>
+<h2 id="2-relational-operators">2. Relational Operators<a class="headerlink" href="#2-relational-operators" title="Permanent link">&para;</a></h2>
+<p>Relational operations allow us to compare variables with one another. With these, you can find out if one variable is greater than another, if two variables are equal, and much more.</p>
+<p>If you have two numbers
+<span class="arithmatex">\(\color{yellow} \text{A}\)</span> and <span class="arithmatex">\(\color{yellow}\text{B}\)</span>,
+and are asked
+"<span class="arithmatex">\(\text{if} \; \color{yellow}\text{A} \; \color{red} \text{is greater than} \; \color{yellow}\text{B} \color{white}\)</span>?"
+then you can have only two possible answers, it will either be yes or no. Similarly, if you are asked
+"<span class="arithmatex">\(\text{if} \; \color{yellow}\text{A} \; \color{red} \text{is equal to} \; \color{yellow}\text{B} \color{white}\)</span>?"
+then this question also has only two answers, yes or no.</p>
+<p>Whenever you use a relational operator, it is like asking one of these questions above. Then how does a computer answer a question like this? Do you remember the data type that can only store one of two different values?</p>
+<p>A <code>boolean</code> data type can either be <code>True</code> or <code>False</code>, it does exactly this! Thus, the answers to all relational operations give you boolean values.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Operator</strong></th>
+<th align="center"><strong>Name</strong></th>
+<th align="center"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code class="highlight"><span class="o">&lt;</span></code></td>
+<td align="center">Less Than</td>
+<td align="center"><code>a&lt;b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">&gt;</span></code></td>
+<td align="center">Greater Than</td>
+<td align="center"><code>a&gt;b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">&lt;=</span></code></td>
+<td align="center">Less Than or Equal to</td>
+<td align="center"><code>a&lt;=b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">&gt;=</span></code></td>
+<td align="center">Greater Than or Equal to</td>
+<td align="center"><code>a&gt;=b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">==</span></code></td>
+<td align="center">Equal to</td>
+<td align="center"><code>a==b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">!=</span></code></td>
+<td align="center">Not Equal to</td>
+<td align="center"><code>a!=b</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><code>a &lt; b</code> This checks if the number <code>a</code> is lesser than <code>b</code>. If it is, then the expression evaluates to <code>True</code>, else it evaluates to <code>False</code>.</li>
+<li><code>a &gt; b</code> This checks if the number <code>a</code> is greater than <code>b</code>. If it is, then the expression evaluates to <code>True</code>, else it evaluates to <code>False</code>.</li>
+<li><code>a &lt;= b</code> This checks if the number <code>a</code> is lesser than or equal to <code>b</code>. If it is, then the expression evaluates to <code>True</code>, else it evaluates to <code>False</code>.</li>
+<li><code>a &gt;= b</code> This checks if the number <code>a</code> is greater than or equal to <code>b</code>. If it is, then the expression evaluates to <code>True</code>, else it evaluates to <code>False</code>.</li>
+<li><code>a == b</code> This checks if the number <code>a</code> is equal to <code>b</code>. If it is, then the expression evaluates to <code>True</code>, else it evaluates to <code>False</code>.</li>
+<li><code>a != b</code> This checks if the number <code>a</code> is not equal to <code>b</code>. If it is, then the expression evaluates to <code>True</code>, else it evaluates to <code>False</code>.</li>
+</ol>
+<p>Note: These relational operators also work on <code>String</code> values, for example <code>a &lt; b</code> checks if <code>a</code> would alphabetically preceed <code>b</code>.</p>
+<p>For Example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># with numbers:</span>
+ <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+ <span class="n">b</span> <span class="o">=</span> <span class="mf">20.0</span>
+ <span class="n">c</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># this would print True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a &lt; b is&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># this would print False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b &gt; c is&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># this would print True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(a+b) == b is&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># this would print True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(a+b) &gt;= c is&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># this would print True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b &lt;= c is&quot;</span><span class="p">,</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="n">c</span><span class="p">)</span>
+
+
+<span class="c1"># With Strings:</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;ball&quot;</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;apple&quot;</span>
+<span class="n">str3</span> <span class="o">=</span> <span class="s2">&quot;cat&quot;</span>
+<span class="n">str4</span> <span class="o">=</span> <span class="s2">&quot;cat&quot;</span>
+
+<span class="c1"># this would print False</span>
+<span class="c1"># this is because alphabetically, str1 does not come before str2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;str1 &lt; str2 is&quot;</span><span class="p">,</span> <span class="n">str1</span> <span class="o">&lt;</span> <span class="n">str2</span><span class="p">)</span>
+
+<span class="c1"># this would print False</span>
+<span class="c1"># this is because alphabetically, str2 comes before str3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;str3 &gt; str2 is&quot;</span><span class="p">,</span> <span class="n">str3</span> <span class="o">&gt;</span> <span class="n">str2</span><span class="p">)</span>
+
+<span class="c1"># this would print True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;str3 == str4 is&quot;</span><span class="p">,</span> <span class="n">str3</span> <span class="o">==</span> <span class="n">str4</span><span class="p">)</span>
+
+<span class="c1"># this would print True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;str1 != str2 is&quot;</span><span class="p">,</span> <span class="n">str1</span> <span class="o">!=</span> <span class="n">str2</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="3-boolean-operators">3. Boolean Operators<a class="headerlink" href="#3-boolean-operators" title="Permanent link">&para;</a></h2>
+<p>If two or more things are required to do a task, we can say that "this AND that are required to do the task". For example:</p>
+<p>To write an email to someone, you must
+"<span class="arithmatex">\(\color{yellow} \text{have a computer} \; \color{red} \text{and} \; \color{yellow} \text{have active internet}\)</span>"
+To paint something, you must
+"<span class="arithmatex">\(\color{yellow} \text{have a paper} \; \color{red} \text{and} \; \color{yellow} \text{have paint} \; \color{red} \text{and} \; \color{yellow} \text{have a paint brush}\)</span>"</p>
+<p>Similarly, if only one, or more things are required to do a task we say that "this OR that is needed to do the task". For example:</p>
+<p>To play a video game, you need to
+"<span class="arithmatex">\(\color{yellow} \text{own a computer} \; \color{red} \text{or} \; \color{yellow} \text{own a gaming console}\)</span>"
+Note that you can still play video games if you own both!</p>
+<p>To draw something you must
+"<span class="arithmatex">\(\color{yellow} \text{have a pencil} \; \color{red} \text{or} \; \color{yellow} \text{have a pen} \; \color{red} \text{and} \; \color{yellow} \text{have a paper}\)</span>"</p>
+<p>Boolean operations allow us to ask these sorts of questions but with boolean values instead. For example, if you wanted to ask "is A greater than B and C?" then you require boolean operations.</p>
+<h3 id="31-the-boolean-and">3.1. The Boolean AND<a class="headerlink" href="#31-the-boolean-and" title="Permanent link">&para;</a></h3>
+<p>Boolean AND: This is used to check if two or more boolean values are simultaneously <code>True</code>.</p>
+<p>Usage: <code class="highlight"><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span></code> (Here, <code>a</code> and <code>b</code> are boolean variables)</p>
+<p>This checks if both <code>a</code> <strong>AND</strong> <code>b</code> are <code>True</code>. If they are, the expression evaluates to <code>True</code>, otherwise it evaluates to <code>False</code>.</p>
+<p>Every combination of inputs and outputs for <code>a and b</code> can be written in a table:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>a</strong></th>
+<th align="center"><strong>b</strong></th>
+<th align="center"><strong>a and b</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">False</td>
+<td align="center">False</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">False</td>
+<td align="center">True</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">True</td>
+<td align="center">False</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">True</td>
+<td align="center">True</td>
+<td align="center">True</td>
+</tr>
+</tbody>
+</table>
+<p>Note that an AND is not limited to just two variables. Any number of variables may be AND-ed together.
+For Example: <code class="highlight"><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">c</span> <span class="ow">and</span> <span class="n">d</span></code>. For this expression to evaluate to True, ALL of <code>a</code>, <code>b</code>, <code>c</code> and <code>d</code> must be True.</p>
+<p>Can you write a table for all possible combinations of inputs and output for this expression?</p>
+<h3 id="32-the-boolean-or">3.2. The Boolean OR<a class="headerlink" href="#32-the-boolean-or" title="Permanent link">&para;</a></h3>
+<p>Boolean OR: This is used to check if one or more booleans are <code>True</code>.</p>
+<p>Usage: <code class="highlight"><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span></code> (Here, <code>a</code> and <code>b</code> are boolean variables)</p>
+<p>This checks if either <code>a</code> <strong>or</strong> <code>b</code> is <code>True</code>. If one of them is, then the expression evaluates to <code>True</code>, else it evaluates to <code>False</code>.</p>
+<p>Every combination of inputs and outputs for <code>a or b</code> can be written in a table:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>a</strong></th>
+<th align="center"><strong>b</strong></th>
+<th align="center"><strong>a || b</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">False</td>
+<td align="center">False</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td align="center">False</td>
+<td align="center">True</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td align="center">True</td>
+<td align="center">False</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td align="center">True</td>
+<td align="center">True</td>
+<td align="center">True</td>
+</tr>
+</tbody>
+</table>
+<p>Note that an OR is not limited to just two variables. Any number of variables may be OR-ed together.
+For Example: <code class="highlight"><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">c</span> <span class="ow">or</span> <span class="n">d</span></code>. For this expression to evaluate to True, only one of <code>a</code>, <code>b</code>, <code>c</code> and <code>d</code> needs to be True.</p>
+<p>Can you write a table for all possible combinations of inputs and output for this expression?</p>
+<p>ANDs and ORs can be used together in the same expression. For example:</p>
+<p><code>(a or b) and c</code>: for this expression to be <code>True</code>, either <code>a</code> or <code>b</code> and <code>c</code> must be <code>True</code>.</p>
+<p><code>a or (b and c)</code>: for this expression to be <code>True</code>, either <code>a</code> must be <code>True</code>or <code>b</code> and <code>c</code> must be <code>True</code> simultaneously.</p>
+<p>Note that if no brackets are used when writing these expressions the expression is evaluated left to right. This means that <code>a or b and c or d</code> is the same as <code>((a or b) and c) or d</code>. Thus, to make it absolutely clear as to what you mean when writing a boolean expression, you should ALWAYS use brackets appropriately for clarity, even though it is not necessary to do so.</p>
+<p>For example:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># this would print True on the screen</span>
+<span class="c1"># because both a &lt; b and c &gt; d are True</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="c1"># this would print False on the screen</span>
+<span class="c1"># because c &lt; b is False</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="c1"># this would print True on the screen</span>
+<span class="c1"># because a &lt; b is True</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="c1"># this would print False on the screen</span>
+<span class="c1"># because neither a &gt; b nor  c &lt; b is True</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">))</span>
+</code></pre></div>
+</td></tr></table></p>
+<h2 id="4-membership-operators">4. Membership Operators<a class="headerlink" href="#4-membership-operators" title="Permanent link">&para;</a></h2>
+<p>These are used to test if a certain sequence is present in an object. For example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;water&quot;</span> <span class="ow">in</span> <span class="s2">&quot;this is a waterbottle&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;water&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;this is a waterbottle&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;spongebob&quot;</span> <span class="ow">in</span> <span class="s2">&quot;squarepants&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;spongebob&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;squarepants&quot;</span><span class="p">)</span>
+
+<span class="c1"># they also work on lists, tuples and dicts:</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">11</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">17</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">17</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">16</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+
+<span class="c1"># for dicts, it checks if a certain key is present in the dict</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">3.14</span> <span class="ow">in</span> <span class="p">{</span><span class="mf">3.14</span><span class="p">:</span> <span class="s2">&quot;pi&quot;</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="ow">in</span> <span class="p">{</span><span class="mf">3.14</span><span class="p">:</span> <span class="s2">&quot;pi&quot;</span><span class="p">})</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="5-the-assignment-operation">5. The Assignment Operation<a class="headerlink" href="#5-the-assignment-operation" title="Permanent link">&para;</a></h2>
+<p>When we use the <code>=</code> sign in programming, it is not a mathematical equality statement. It actually tells us that we are assigning a value to a variable. So when you see something like <code class="highlight"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span></code>, this means that you are simply adding <code class="highlight"><span class="mi">1</span></code> to the value of <code>a</code>. you are assigning the value <code class="highlight"><span class="n">a</span><span class="o">+</span><span class="mi">1</span></code> to <code>a</code>. Once again, it is not a mathematical equality statement, it is an assignment.</p>
+<h2 id="6-shorthand-assignment-operators">6. Shorthand Assignment Operators<a class="headerlink" href="#6-shorthand-assignment-operators" title="Permanent link">&para;</a></h2>
+<p>Shorthand assignment operators allow us to assign values to variables:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Operator</strong></th>
+<th align="center"><strong>Name</strong></th>
+<th align="center"><strong>Example</strong></th>
+<th align="center"><strong>Non Short Hand Equivalent</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code class="highlight"><span class="o">+=</span></code></td>
+<td align="center">Addition</td>
+<td align="center"><code>a+=b</code></td>
+<td align="center"><code>a = a+b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">-=</span></code></td>
+<td align="center">Subtraction</td>
+<td align="center"><code>a-=b</code></td>
+<td align="center"><code>a = a-b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">*=</span></code></td>
+<td align="center">Multiplication</td>
+<td align="center"><code>a*=b</code></td>
+<td align="center"><code>a = a*b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">/=</span></code></td>
+<td align="center">Division</td>
+<td align="center"><code>a/=b</code></td>
+<td align="center"><code>a = a/b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">//=</span></code></td>
+<td align="center">Integer Division</td>
+<td align="center"><code>a//=b</code></td>
+<td align="center"><code>a = a//b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">%=</span></code></td>
+<td align="center">Modulo</td>
+<td align="center"><code>a%=b</code></td>
+<td align="center"><code>a = a%b</code></td>
+</tr>
+<tr>
+<td align="center"><code class="highlight"><span class="o">**=</span></code></td>
+<td align="center">Exponentiation</td>
+<td align="center"><code>a**=b</code></td>
+<td align="center"><code>a = a**b</code></td>
+</tr>
+</tbody>
+</table>
+<p>Note: There are two more types of operators, Identity Operators and Bitwise Operators. Bitwise Operators are out of the scope of today's session, and we will be taking a look at Identity Operators at a later point.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../vars/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Variables
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../flow_control/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Flow Control
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "search.suggest", "search.highlight", "search.share", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
