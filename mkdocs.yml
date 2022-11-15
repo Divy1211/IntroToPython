@@ -65,8 +65,8 @@ theme:
     - search.suggest
     # - toc.integrate
   font:
-    text: Times New Roman
-    code: Consolas
+    text: Roboto
+    code: Fira Code
   icon:
     logo: octicons/file-code-24
     admonition:
