@@ -96,8 +96,19 @@ class Student2:
         print()
 
 # when there are a lot of function parameters, it is nice to specify which parameters correspond to what
-# values for better readability and clarity
-B = Student2(name = "Robert", age = 14, sex = "male", height = 160, weight = 65, school = "SUTD", id_no = 1025, seat_no = 12, year = 1, section = "A")
+# values for better readability and clarity and put them each on their own line
+B = Student2(
+    name = "Robert", 
+    age = 14, 
+    sex = "male", 
+    height = 160, 
+    weight = 65, 
+    school = "SUTD", 
+    id_no = 1025, 
+    seat_no = 12, 
+    year = 1, 
+    section = "A",
+)
 print(B.name+"'s age: "+str(B.age))
 B.display_information()
 ```
@@ -109,7 +120,7 @@ Also, to access a student's name and age, you have to do `A.person.name` and `A.
 
 The 2nd approach fixes this issue but it is also a bit tedious because you have to manually declare all properties of a person inside the student constructor... What if there were not 5, but 100 different properties associated with a person? It would be too unfeasable to manually rewrite them.
 
-This is where inheritance comes into the picture. Inheritance literally allows us to "inherit" the properties of one class (called the super class) into another class (called the sub class)
+This is where inheritance comes into the picture. Inheritance literally allows us to "inherit" the properties of one class (called the super or base class) into another class (called the sub or child class)
 
 ```py
 
@@ -132,7 +143,7 @@ class Person:
 # Base/Sub class
 class Student(Person):
     def __init__(self, name, age, sex, height, weight, school, id_no, seat_no, year, section):
-        Person.__init__(self, name, age, sex, height, weight)
+        Person.__init__(self, name, age, sex, height, weight) # we can re-use functionality from the super class!
         self.school = school
         self.id_no = id_no
         self.seat_no = seat_no
@@ -140,7 +151,7 @@ class Student(Person):
         self.section = section
 
     def display_information(self):
-        Person.display_information(self)
+        Person.display_information(self) # we can re-use functionality from the super class!
         print("School  : " + self.school)
         print("ID      : " + str(self.id_no))
         print("Seat    : " + str(self.seat_no))
@@ -148,11 +159,39 @@ class Student(Person):
         print("Section : " + self.section)
     
 # when there are a lot of function parameters, it is nice to specify which parameters correspond to what
-# values for better readability and clarity
-A = Student(name = "Robin", age = 16, sex = "male", height = 180, weight = 75, school = "SUTD", id_no = 1023, seat_no = 3, year = 3, section = "A")
+# values for better readability and clarity and put them each on their own line
+A = Student(
+    name = "Robin", 
+    age = 16, 
+    sex = "male", 
+    height = 180, 
+    weight = 75, 
+    school = "SUTD", 
+    id_no = 1023, 
+    seat_no = 3, 
+    year = 3, 
+    section = "A",
+)
 print(A.name+"'s age: "+str(A.age))
 A.display_information()
 ```
+
+!!! note "Best practice"
+    The following usages of super class methods in the above example:
+    ```py
+    Person.__init__(self, name, age, sex, height, weight)
+
+    Person.display_information(self)
+    ```
+    Are for educational purposes only, in real python programs, we should make use of the following syntax instead:
+
+    ```py
+    # notice that the self parameter has been omitted
+    super().__init__(name, age, sex, height, weight)
+
+    super().display_information()
+    ```
+    The reason for doing so is that `super()` in python does the work of figuring out which super class's function to call and if you end up changing the superclass, you don't have to change all your code everywhere (Also there can be multiple super classes, but that's a story for another day)
 
 === "Practise"
     Given a class computer, Write a subclass laptop and desktop with the given additional properties:
@@ -183,12 +222,14 @@ A.display_information()
 
     ```py
     class Computer:
-        def __init__(self,
-                    cpu: str,
-                    storage_type: str,
-                    storage: float,
-                    ram: float,
-                    gpu: str):
+        def __init__(
+            self,
+            cpu: str,
+            storage_type: str,
+            storage: float,
+            ram: float,
+            gpu: str,
+        ):
 
             # type hints can also be given to a class' data members
             self.cpu: str = cpu
@@ -234,12 +275,14 @@ A.display_information()
 
     ```py
     class Computer:
-        def __init__(self,
-                    cpu: str,
-                    storage_type: str,
-                    storage: float,
-                    ram: float,
-                    gpu: str):
+        def __init__(
+            self,
+            cpu: str,
+            storage_type: str,
+            storage: float,
+            ram: float,
+            gpu: str,
+        ):
 
             # type hints can also be given to a class' data members
             self.cpu: str = cpu
@@ -260,12 +303,14 @@ A.display_information()
 
     ```py
     class Computer:
-        def __init__(self,
-                    cpu: str,
-                    storage_type: str,
-                    storage: float,
-                    ram: float,
-                    gpu: str):
+        def __init__(
+            self,
+            cpu: str,
+            storage_type: str,
+            storage: float,
+            ram: float,
+            gpu: str,
+        ):
 
             # type hints can also be given to a class' data members
             self.cpu: str = cpu
@@ -282,14 +327,16 @@ A.display_information()
             print("The GPU is          : "+self.gpu)
 
     class Laptop(Computer):
-        def __init__(self,
-                    cpu: str,
-                    storage_type: str,
-                    storage: float,
-                    ram: float,
-                    gpu: str,
-                    resolution: str,
-                    is_touchscreen: bool):
+        def __init__(
+            self,
+            cpu: str,
+            storage_type: str,
+            storage: float,
+            ram: float,
+            gpu: str,
+            resolution: str,
+            is_touchscreen: bool,
+        ):
             Computer.__init__(self, cpu, storage_type, storage, ram, gpu)
             self.resolution = resolution
             self.is_touchscreen = is_touchscreen
@@ -300,16 +347,18 @@ A.display_information()
             print("Is it a touchscreen : "+str(self.is_touchscreen))
 
     class Desktop(Computer):
-        def __init__(self,
-                    cpu: str,
-                    storage_type: str,
-                    storage: float,
-                    ram: float,
-                    gpu: str,
-                    monitor: str,
-                    resolution: str,
-                    keyboard: str,
-                    mouse: str):
+        def __init__(
+            self,
+            cpu: str,
+            storage_type: str,
+            storage: float,
+            ram: float,
+            gpu: str,
+            monitor: str,
+            resolution: str,
+            keyboard: str,
+            mouse: str,
+        ):
             Computer.__init__(self, cpu, storage_type, storage, ram, gpu)
             self.monitor = monitor
             self.resolution = resolution

@@ -43,7 +43,7 @@ print(ls)
 
 ## 3. Data Types
 
-Remember, variables are like boxes/containers that are used to store constants. For every different kind of constant, a different type of contanier/box is required! Think about it this way, you cannot store water in a paper bag. you need a water bottle to store water. Similarly, in python, each different kind of constant must be stored in a different type of variable. The tyoe of the variable is known as its data type. So how many kinds of boxes, or data types are there? The following are the most commonly used data types in python:
+Remember, variables are like boxes/containers that are used to store constants. For every different kind of constant, a different type of contanier/box is required! Think about it this way, you cannot store water in a paper bag. you need a water bottle to store water. Similarly, in python, each different kind of constant must be stored in a different type of variable. The type of the variable is known as its data type. So how many kinds of boxes, or data types are there? The following are the most commonly used data types in python:
 
 ### 3.1. Integer (`#!py int` )
 

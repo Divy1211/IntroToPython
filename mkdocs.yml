@@ -24,7 +24,9 @@ markdown_extensions:
   - pymdownx.mark # highlighting of text
   - pymdownx.tilde # strikethrough of text
   - pymdownx.keys # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#keys
-  - pymdownx.tabbed # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#tabbed
+  - pymdownx.superfences # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#superfences
+  - pymdownx.tabbed: # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#tabbed
+      alternate_style: true
   - pymdownx.details # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#details
   - pymdownx.highlight: # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-blocks
       linenums: true
@@ -32,7 +34,6 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.inlinehilite
-  - pymdownx.superfences # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#superfences
   - pymdownx.smartsymbols # supporting special characters like copyright symbol (c)
   - pymdownx.arithmatex: # https://squidfunk.github.io/mkdocs-material/reference/mathjax/#arithmatex
       generic: true
