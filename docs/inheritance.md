@@ -191,7 +191,7 @@ A.display_information()
 
     super().display_information()
     ```
-    The reason for doing so is that `super()` in python does the work of figuring out which super class's function to call and if you end up changing the superclass, you don't have to change all your code everywhere (Also there can be multiple super classes, but that's a story for another day)
+    The reason for doing so is that `#!py super()` in python does the work of figuring out which super class's function to call and if you end up changing the superclass, you don't have to change all your code everywhere (Also there can be multiple super classes, but that's a story for another day)
 
 === "Practise"
     Given a class computer, Write a subclass laptop and desktop with the given additional properties:
@@ -337,12 +337,12 @@ A.display_information()
             resolution: str,
             is_touchscreen: bool,
         ):
-            Computer.__init__(self, cpu, storage_type, storage, ram, gpu)
+            super().__init__(cpu, storage_type, storage, ram, gpu)
             self.resolution = resolution
             self.is_touchscreen = is_touchscreen
 
         def display_information(self):
-            Computer.display_information(self)
+            super().display_information()
             print("The resolution is   : "+self.resolution)
             print("Is it a touchscreen : "+str(self.is_touchscreen))
 
@@ -359,14 +359,14 @@ A.display_information()
             keyboard: str,
             mouse: str,
         ):
-            Computer.__init__(self, cpu, storage_type, storage, ram, gpu)
+            super().__init__(cpu, storage_type, storage, ram, gpu)
             self.monitor = monitor
             self.resolution = resolution
             self.keyboard = keyboard
             self.mouse = mouse
 
         def display_information(self):
-            Computer.display_information(self)
+            super().display_information()
             print("The monitor is      : "+self.monitor)
             print("The resolution is   : "+self.resolution)
             print("The keyboard is     : "+self.keyboard)
