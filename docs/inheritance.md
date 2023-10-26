@@ -20,11 +20,11 @@ class Person:
         self.weight = weight
 
     def display_information(self):
-        print("Name   : " + self.name)
-        print("Age    : " + str(self.age))
-        print("Sex    : " + self.sex)
-        print("Height : " + str(self.height))
-        print("Weight : " + str(self.weight))
+        print("Name   :", self.name)
+        print("Age    :", self.age)
+        print("Sex    :", self.sex)
+        print("Height :", self.height)
+        print("Weight :", self.weight)
 
 class Student1:
     def __init__(self, person, school, id_no, seat_no, year, section):
@@ -37,17 +37,17 @@ class Student1:
     
     def display_information(self):
         self.person.display_information()
-        print("School  : " + self.school)
-        print("ID      : " + str(self.id_no))
-        print("Seat    : " + str(self.seat_no))
-        print("Year    : " + str(self.year))
-        print("Section : " + self.section)
+        print("School  :", self.school)
+        print("ID      :", self.id_no)
+        print("Seat    :", self.seat_no)
+        print("Year    :", self.year)
+        print("Section :", self.section)
         print()
     
         
 A = Student1(Person("John", 15, "male", 160, 60), "SUTD", 1024, 32, 2, "A")
 
-print(A.person.name+"'s age: "+str(A.person.age))
+print(A.person.name+"'s age:", A.person.age)
 A.display_information()
 ```
 
@@ -63,11 +63,11 @@ class Person:
         self.weight = weight
 
     def display_information(self):
-        print("Name   : " + self.name)
-        print("Age    : " + str(self.age))
-        print("Sex    : " + self.sex)
-        print("Height : " + str(self.height))
-        print("Weight : " + str(self.weight))
+        print("Name   :", self.name)
+        print("Age    :", self.age)
+        print("Sex    :", self.sex)
+        print("Height :", self.height)
+        print("Weight :", self.weight)
 
 class Student2:
     def __init__(self, name, age, sex, height, weight, school, id_no, seat_no, year, section):
@@ -83,16 +83,16 @@ class Student2:
         self.section = section
 
     def display_information(self):
-        print("Name   : " + self.name)
-        print("Age    : " + str(self.age))
-        print("Sex    : " + self.sex)
-        print("Height : " + str(self.height))
-        print("Weight : " + str(self.weight))
-        print("School  : " + self.school)
-        print("ID      : " + str(self.id_no))
-        print("Seat    : " + str(self.seat_no))
-        print("Year    : " + str(self.year))
-        print("Section : " + self.section)
+        print("Name   :", self.name)
+        print("Age    :", self.age)
+        print("Sex    :", self.sex)
+        print("Height :", self.height)
+        print("Weight :", self.weight)
+        print("School  :", self.school)
+        print("ID      :", self.id_no)
+        print("Seat    :", self.seat_no)
+        print("Year    :", self.year)
+        print("Section :", self.section)
         print()
 
 # when there are a lot of function parameters, it is nice to specify which parameters correspond to what
@@ -109,7 +109,7 @@ B = Student2(
     year = 1, 
     section = "A",
 )
-print(B.name+"'s age: "+str(B.age))
+print(B.name+"'s age:", B.age)
 B.display_information()
 ```
 The first approach works, but the syntax looks a bit unintuitive, doesn't it?
@@ -134,11 +134,11 @@ class Person:
         self.weight = weight
 
     def display_information(self):
-        print("Name   : " + self.name)
-        print("Age    : " + str(self.age))
-        print("Sex    : " + self.sex)
-        print("Height : " + str(self.height))
-        print("Weight : " + str(self.weight))
+        print("Name   :", self.name)
+        print("Age    :", self.age)
+        print("Sex    :", self.sex)
+        print("Height :", self.height)
+        print("Weight :", self.weight)
 
 # Base/Sub class
 class Student(Person):
@@ -152,11 +152,11 @@ class Student(Person):
 
     def display_information(self):
         Person.display_information(self) # we can re-use functionality from the super class!
-        print("School  : " + self.school)
-        print("ID      : " + str(self.id_no))
-        print("Seat    : " + str(self.seat_no))
-        print("Year    : " + str(self.year))
-        print("Section : " + self.section)
+        print("School  :", self.school)
+        print("ID      :", self.id_no)
+        print("Seat    :", self.seat_no)
+        print("Year    :", self.year)
+        print("Section :", self.section)
     
 # when there are a lot of function parameters, it is nice to specify which parameters correspond to what
 # values for better readability and clarity and put them each on their own line
@@ -172,7 +172,7 @@ A = Student(
     year = 3, 
     section = "A",
 )
-print(A.name+"'s age: "+str(A.age))
+print(A.name+"'s age:", A.age)
 A.display_information()
 ```
 
@@ -191,7 +191,7 @@ A.display_information()
 
     super().display_information()
     ```
-    The reason for doing so is that `#!py super()` in python does the work of figuring out which super class's function to call and if you end up changing the superclass, you don't have to change all your code everywhere (Also there can be multiple super classes, but that's a story for another day)
+    The reason for doing so is that `#!py super()` in python does the work of figuring out which super class' function to call and if you end up changing the superclass, you don't have to change all your code everywhere (Also there can be multiple super classes, but that's a story for another day)
 
 === "Practise"
     Given a class computer, Write a subclass laptop and desktop with the given additional properties:
@@ -239,11 +239,11 @@ A.display_information()
             self.gpu: str = gpu
 
         def display_information(self):
-            print("The CPU type is     : "+self.cpu)
-            print("The Storage type is : "+self.storage_type)
-            print("The Stroage is      : "+str(self.storage))
-            print("The RAM is          : "+str(self.ram))
-            print("The GPU is          : "+self.gpu)
+            print("The CPU type is     :", self.cpu)
+            print("The Storage type is :", self.storage_type)
+            print("The Stroage is      :", self.storage)
+            print("The RAM is          :", self.ram)
+            print("The GPU is          :", self.gpu)
     ```
 
 === "Answer"
@@ -292,11 +292,11 @@ A.display_information()
             self.gpu: str = gpu
 
         def display_information(self):
-            print("The CPU type is     : "+self.cpu)
-            print("The Storage type is : "+self.storage_type)
-            print("The Stroage is      : "+str(self.storage))
-            print("The RAM is          : "+str(self.ram))
-            print("The GPU is          : "+self.gpu)
+            print("The CPU type is     :", self.cpu)
+            print("The Storage type is :", self.storage_type)
+            print("The Stroage is      :", self.storage)
+            print("The RAM is          :", self.ram)
+            print("The GPU is          :", self.gpu)
     ```
 
     Required Classes:
@@ -320,11 +320,11 @@ A.display_information()
             self.gpu: str = gpu
 
         def display_information(self):
-            print("The CPU type is     : "+self.cpu)
-            print("The Storage type is : "+self.storage_type)
-            print("The Stroage is      : "+str(self.storage))
-            print("The RAM is          : "+str(self.ram))
-            print("The GPU is          : "+self.gpu)
+            print("The CPU type is     :", self.cpu)
+            print("The Storage type is :", self.storage_type)
+            print("The Stroage is      :", self.storage)
+            print("The RAM is          :", self.ram)
+            print("The GPU is          :", self.gpu)
 
     class Laptop(Computer):
         def __init__(
@@ -343,8 +343,8 @@ A.display_information()
 
         def display_information(self):
             super().display_information()
-            print("The resolution is   : "+self.resolution)
-            print("Is it a touchscreen : "+str(self.is_touchscreen))
+            print("The resolution is   :", self.resolution)
+            print("Is it a touchscreen :", self.is_touchscreen)
 
     class Desktop(Computer):
         def __init__(
@@ -367,8 +367,8 @@ A.display_information()
 
         def display_information(self):
             super().display_information()
-            print("The monitor is      : "+self.monitor)
-            print("The resolution is   : "+self.resolution)
-            print("The keyboard is     : "+self.keyboard)
-            print("The mouse is        : "+self.mouse)
+            print("The monitor is      :", self.monitor)
+            print("The resolution is   :", self.resolution)
+            print("The keyboard is     :", self.keyboard)
+            print("The mouse is        :", self.mouse)
     ```

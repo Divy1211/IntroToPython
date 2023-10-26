@@ -62,32 +62,38 @@ A `#!py bool` is a data type, that can only store one of two different values, `
 
 Syntax: `#!py a = True` This declares a variable of type `bool` called `a` with a value of `#!py True`
 
-Note: A value of `True` can also be indicated by `#!py 1` and a value of `False` can also be indicated by `#!py 0`.
+!!! info
+    A value of `True` can also be indicated by `#!py 1` and a value of `False` can also be indicated by `#!py 0`.
 
 ### 3.4. String (`#!py str`)
 
 An `#!py str` is a word, a phrase or a sentence. A string is always enclosed by double quotes.
 
-Syntax: `#!py a = "this is a string! yay"` This declares a variable of type `str` called `a` with a value of `#!py "this is a string! yay"`
-Note that you can also use single quotes for declaring strings:
+Syntax: `#!py a = "this is a string! yay"` This declares a variable of type `str` called `a` with a value of `#!py "this is a string! yay"`.
+You can also use single quotes for declaring strings:
 `#!py a = 'this is a string! yay'`
 
-What if you want to use a string that has multiple lines, can you do that?
-Yes you can! Syntax:
+!!! question "String with multiple lines?"
+    You might be tempted to do something like this:
+    ```py
+    a = "this is\na multiple line\nstring"
+    # \n is a special character that represents a new line or an "enter" press in a string
+    ```
 
-```py
-a = """this is
-a multiple line
-string"""
+    But there is a better way:
+    ```py
+    a = """this is
+    a multiple line
+    string"""
 
-print(a)
-
-b = '''this is
-another multiple line
-string'''
-
-print(b)
-```
+    print(a)
+    
+    b = '''this is
+    another multiple line
+    string'''
+    
+    print(b)
+    ```
 
 what if you want to obtain the letter in a particular position in a string?
 
@@ -308,24 +314,31 @@ The constants to the left are called keys, and the constants to the right are ca
 Example:
 ```py
 a = {
-        "this is a key": "this is it's value",
-        3.14: "pie",
-        4: "2x2",
-        (2, 3): "a tuple!"
-    }
+    "this is a key": "this is it's value",
+    3.14: "pie",
+    4: "2x2",
+    (2, 3): "a tuple!",
+}
 ```
 
-Note: like a list or a tuple, you can write the above out in one line, but dicts are almost always never written like that! its always a good idea to write each key-value pair of a dict out on a separate line
+!!! note "Best Practice"
+    like a list or a tuple, you could write the above out in one line:
+
+    ```py
+    a = {"this is a key": "this is it's value", 3.14: "pie", 4: "2x2", (2, 3): "a tuple!"}
+    ```
+
+    But that is so much worse for readability! Dicts are conventionally almost always never written like that, its always a good idea to write each key-value pair of a dict out on a separate line
 
 So how do you actually use a dictionary?
 
 ```py
 a = {
-        "this is a key": "this is it's value",
-        3.14: "pie",
-        4: "2x2",
-        (2, 3): "a tuple!"
-    }
+    "this is a key": "this is it's value",
+    3.14: "pie",
+    4: "2x2",
+    (2, 3): "a tuple!",
+}
 print(a["this is a key"])
 print(a[3.14])
 print(a[4])

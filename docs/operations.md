@@ -17,7 +17,8 @@ The most obvious thing that we can do with numbers, is do arithmetic with them. 
 | `#!py %`      | Modulo           | `a%b`        |
 | `#!py **`     | Exponentiation   | `a**b`       |
 
-Note: Integer division gives you the quotient of the division. For example: `17/6 = 2.833` but `17//6 = 2`. Modulo on the other hand, gives you the remainder of a division.
+!!! question "What is integer division?"
+    Integer division gives you the quotient of the division. For example: `17/6 = 2.833` but `17//6 = 2`. Modulo on the other hand, gives you the remainder of a division.
 
 ## 2. Relational Operators
 
@@ -51,7 +52,8 @@ A `boolean` data type can either be `True` or `False`, it does exactly this! Thu
 5. `a == b` This checks if the number `a` is equal to `b`. If it is, then the expression evaluates to `True`, else it evaluates to `False`.
 6. `a != b` This checks if the number `a` is not equal to `b`. If it is, then the expression evaluates to `True`, else it evaluates to `False`.
 
-Note: These relational operators also work on `String` values, for example `a < b` checks if `a` would alphabetically preceed `b`.
+!!! info "String comparisons"
+    These relational operators also work on `String` values, for example `a < b` checks if `a` would alphabetically preceed `b`.
 
 For Example:
 
@@ -135,10 +137,11 @@ Every combination of inputs and outputs for `a and b` can be written in a table:
 | True  | False | False       |
 | True  | True  | True        |
 
-Note that an AND is not limited to just two variables. Any number of variables may be AND-ed together.
-For Example: `#!py a and b and c and d`. For this expression to evaluate to True, ALL of `a`, `b`, `c` and `d` must be True.
+!!! info "AND with more than two values"
+    AND is not limited to just two variables. Any number of variables may be AND-ed together.
+    For Example: `#!py a and b and c and d`. For this expression to evaluate to True, ALL of `a`, `b`, `c` and `d` must be True.
 
-Can you write a table for all possible combinations of inputs and output for this expression?
+    Can you write a table for all possible combinations of inputs and output for this expression?
 
 ### 3.2. The Boolean OR
 
@@ -157,18 +160,30 @@ Every combination of inputs and outputs for `a or b` can be written in a table:
 | True  | False | True         |
 | True  | True  | True         |
 
-Note that an OR is not limited to just two variables. Any number of variables may be OR-ed together.
-For Example: `#!py a or b or c or d`. For this expression to evaluate to True, only one of `a`, `b`, `c` and `d` needs to be True.
+!!! info "OR with more than two values"
+    OR is not limited to just two variables. Any number of variables may be OR-ed together.
+    For Example: `#!py a or b or c or d`. For this expression to evaluate to True, only one of `a`, `b`, `c` and `d` needs to be True.
 
-Can you write a table for all possible combinations of inputs and output for this expression?
+    Can you write a table for all possible combinations of inputs and output for this expression?
 
-ANDs and ORs can be used together in the same expression. For example:
+!!! info "Combining ANDs and ORs"
+    ANDs and ORs can be used together in the same expression. For example:
+    
+    `#!py (a or b) and c`: for this expression to be `#!py True`, either `a` or `b` and `c` must be `#!py True`.
+    
+    `#!py a or (b and c)`: for this expression to be `#!py True`, either `a` must be `#!py True`or `b` and `c` must be `#!py True` simultaneously.
+    
+    !!! danger "ANDs are always evaluated before ORs"
+        What does this expression mean? `#!py a or b and c`
 
-`(a or b) and c`: for this expression to be `True`, either `a` or `b` and `c` must be `True`.
+        1. a or b... and c?
+        2. a or... b and c?
 
-`a or (b and c)`: for this expression to be `True`, either `a` must be `True`or `b` and `c` must be `True` simultaneously.
+        If no brackets are used when writing these expressions, the AND parts of an expression are evaluated first. Thus, the above expression means the second statement in English!
 
-Note that if no brackets are used when writing these expressions the expression is evaluated left to right. This means that `a or b and c or d` is the same as `((a or b) and c) or d`. Thus, to make it absolutely clear as to what you mean when writing a boolean expression, you should ALWAYS use brackets appropriately for clarity, even though it is not necessary to do so.
+        In that example, it might be easy to remember but what if we have something more complicated? `#!py a or b and c or d and e`. It's the same as `#!py a or (b and c) or (d and e)`.
+
+        To make it absolutely clear as to what you mean when writing a boolean expression, you should ALWAYS use brackets appropriately for clarity, even when it is not necessary to do so.
 
 For example:
 ```py
@@ -235,4 +250,5 @@ Shorthand assignment operators allow us to assign values to variables:
 | `#!py **=`     | Exponentiation   | `a**=b`     | `a = a**b`                    |
 
 
-Note: There are two more types of operators, Identity Operators and Bitwise Operators. Bitwise Operators are out of the scope of today's session, and we will be taking a look at Identity Operators at a later point.
+!!! info "Identity and Bitwise operators"
+    There are two more types of operators, Identity Operators and Bitwise Operators. They are out of the scope of today's session, but if you are curious, you can look them up!

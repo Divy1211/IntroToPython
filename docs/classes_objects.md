@@ -22,10 +22,10 @@ pen_owner = "John"
 
 # wouldn't you want a way to see the info about your pen? Lets write a function to do that!
 def display_information(colour, size, kind, owner):
-    print("Colour : " + colour)
-    print("Size   : " + str(size))
-    print("Kind   : " + kind)
-    print("Owner  : " + owner)
+    print("Colour :", colour)
+    print("Size   :", size)
+    print("Kind   :", kind)
+    print("Owner  :", owner)
     print()
 
 display_information(pen_colour, pen_size, pen_kind, pen_owner)
@@ -70,10 +70,10 @@ class Pen:
     # for example, you could have a method called read() that reads the contents of a text book but you
     # cannot use that method on a pen, because it doesn't make sense to read a pen!
     def display_information(pen):
-        print("Colour : " + pen.colour)
-        print("Size   : " + str(pen.size))
-        print("Kind   : " + pen.kind)
-        print("Owner  : " + pen.owner)
+        print("Colour :", pen.colour)
+        print("Size   :", pen.size)
+        print("Kind   :", pen.kind)
+        print("Owner  :", pen.owner)
         print()
 
 # But a class is just a blue-print for creating a pen, it tells us which properties a pen is supposed to have
@@ -117,10 +117,10 @@ class Pen:
         self.owner = owner
 
     def display_information(self):
-        print("Colour : " + self.colour)
-        print("Size   : " + str(self.size))
-        print("Kind   : " + self.kind)
-        print("Owner  : " + self.owner)
+        print("Colour :", self.colour)
+        print("Size   :", self.size)
+        print("Kind   :", self.kind)
+        print("Owner  :", self.owner)
         print()
 ```
 
@@ -166,15 +166,17 @@ class Pen:
     
     ```py
     class Bicycle:
-        def __init__(self,
-                     colour,
-                     mat,
-                     size,
-                     height,
-                     gear_ratio,
-                     diameter,
-                     has_basket,
-                     has_bell):
+        def __init__(
+            self,
+            colour,
+            mat,
+            size,
+            height,
+            gear_ratio,
+            diameter,
+            has_basket,
+            has_bell
+        ):
             self.colour = colour
             self.mat = mat
             self.size = size
@@ -215,10 +217,10 @@ class Pen:
         self.kind = kind
         self.owner = owner
     def display_information(self):
-        print("Colour : " + self.colour)
-        print("Size   : " + str(self.size))
-        print("Kind   : " + self.kind)
-        print("Owner  : " + self.owner)
+        print("Colour :", self.colour)
+        print("Size   :", self.size)
+        print("Kind   :", self.kind)
+        print("Owner  :", self.owner)
         print()
 class Pencil:
     def __init__(self, colour, shade, owner):
@@ -226,9 +228,9 @@ class Pencil:
         self.shade = shade
         self.owner = owner
     def display_information(self):
-        print("Colour : " + self.colour)
-        print("Shade  : " + str(self.shade))
-        print("Owner  : " + self.owner)
+        print("Colour :", self.colour)
+        print("Shade  :", self.shade)
+        print("Owner  :", self.owner)
         print()
 
 class Stationary:
@@ -241,6 +243,9 @@ class Stationary:
         print("The Pencil: ")
         self.pencil.display_information()
 
-A = Stationary(Pen("blue", 0.1, "ball", "John"), Pencil("black", "HB", "John"))
+A = Stationary(
+    Pen("blue", 0.1, "ball", "John"),
+    Pencil("black", "HB", "John")
+)
 A.display_information()
 ```

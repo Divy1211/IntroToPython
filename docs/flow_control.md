@@ -53,9 +53,10 @@ else:
     print("no condition is true")
 ```
 
-Note that in the above example, both the `#!py (b > a)` and `#!py (b == 20)` conditions are true. However, in an `#!py if else if` statement, only one branch of instructions is ever executed. Which condition takes proiority is decided by what order you write them in. So in this case, `#!py "b > 20"` will be printed to the screen because that is the first condition which is true.
+!!! question "What happens when multiple conditions are true?"
+    In the above example, both the `#!py (b > a)` and `#!py (b == 20)` conditions are true. However, in an `#!py if else if` statement, only one branch of instructions is ever executed. Which condition takes proiority is decided by what order you write them in. So in this case, `#!py "b > 20"` will be printed to the screen because that is the first condition which is true.
 
-Technically, whenever a condition becomes true and its branch of instructions are executed, all of the remaining conditions are skipped, and not even evaluated.
+    Technically, whenever a condition becomes true and its branch of instructions are executed, all of the remaining conditions are skipped, and not even evaluated.
 
 === "Practise"
     Now that you are armed with the power of `#!py if else if`, can you:
@@ -75,11 +76,11 @@ Technically, whenever a condition becomes true and its branch of instructions ar
     b = 20
     c = 30
     if a > b and a > c:
-        print("the maximum is a: "+a)
+        print("the maximum is a:", a)
     else if b > c and b > a:
-        print("the maximum is b: "+b)
+        print("the maximum is b:", b)
     else:
-        print("the maximum is c: "+c)
+        print("the maximum is c:", c)
     ```
 
 ## 2. Loops
@@ -99,13 +100,13 @@ Loops are statements that allow us to do exactly that! There are two types of lo
 
 ### 2.1. The `#!py while` loop
 
-A `#!py while` statement repeatedly executes a block of code as long as (while) something is `True`. This process of repeatedly executing the same block of code is known as iteration!
+A `#!py while` statement repeatedly executes a block of code as long as (while) something is `#!py True`. This process of repeatedly executing the same block of code is known as iteration!
 For example:
 
 ```py
 a = 0
 while a < 10:
-    print("a = "+a)
+    print("a =", a)
     a+=1
 ```
 
@@ -150,7 +151,7 @@ while a < 10:
     number = 1
     increase = 1
     while increase <= 15:
-        print("number = "+number)
+        print("number =", number)
         number = number + increase
         increase+=1
     ```
@@ -162,17 +163,17 @@ A `#!py for` statement is specifically used to loop over a range of values, say 
 For example:
 ```py
 for a in range(2, 23):
-    print("a = "+a)
+    print("a =", a)
 # prints numbers from 3 to 22
 
 # what if you wanted to go down from 10 to 0?
 # that is also possible:
 for a in range(10, 0):
-    print("a = "+a)
+    print("a =", a)
 
 # you can also define a step size:
 for a in range(10, 0, 3):
-    print("a = "+a)
+    print("a =", a)
 # similar to slicing
 ```
 
@@ -200,4 +201,134 @@ my_dict = {3.14: "pi", "pie": "is tasty!", "spongebob": "squarepants"}
 
 for key in my_dict:
     print(key, my_dict[key])
+```
+
+### 2.3. The `#!py break` statement
+
+`#!py break` forces a loop to terminate earlier, even if its condition is still `#!py True`:
+
+```py
+a = 0
+while a < 10:
+    print("a =", a)
+    a+=1
+    if a == 5:
+        break
+```
+
+This will just print:
+```
+0
+1
+2
+3
+4
+```
+
+Notice that the loop's condition is still `#!py True` at the end of this program
+
+### 2.4. The `#!py continue` statement
+
+`#!py continue` makes the loop immediately jump to its next cycle and skip any code after the `#!py continue`
+
+```py
+a = 0
+while a < 5:
+    if a == 2:
+        continue
+    print("a =", a)
+    a+=1
+```
+
+This outputs:
+
+```
+0
+1
+3
+4
+```
+
+Notice that printing the value `2` was skipped, but the others were still printed
+
+### 2.5. The `#!py while else` statement
+
+This is a unique feature of python that is not found in other programming languages. You can add an else block at the end of a while loop as follows:
+
+```py
+i = 0
+while i < 3:
+    print("while")
+    i += 1
+else:
+    print("else")
+```
+
+What does this mean? If the condition of the while loop evaluates to `#!py False`, then the code in the `#!py else` block is executed. This is just like an `#!py if else` statement! So the above code will output:
+
+```
+while
+while
+while
+else
+```
+
+But wait, doesn't that mean that an else block will ALWAYS run at the end of a loop when the loop condition eventually becomes `#!py False` for it to terminate? Yep! Now you might be asking, how is it any different from:
+
+```py
+i = 0
+while i < 3:
+    print("while")
+    i += 1
+
+print("else")
+```
+
+And the answer is, for this specific piece of code, there is no difference, and it should be written without the `#!py else`
+
+The difference is when we terminate our loop by other methods, remember the `#!py break` statement?
+
+```py
+a = 0
+while a < 10:
+    print("a =", a)
+    a+=1
+    if a == 5:
+        break
+else:
+    print("else")
+```
+
+This outputs:
+
+```
+0
+1
+2
+3
+4
+```
+
+### 2.6. The `#!py for else` statement
+
+This works exactly like the `#!py while else` statement, where the `#!py else` block is only executed when the loop terminates without a `#!py break`
+
+```py
+for i in range(10):
+    print(i)
+    if i == 5:
+        break
+else:
+    print("else")
+```
+
+This outputs:
+
+```
+0
+1
+2
+3
+4
+5
 ```

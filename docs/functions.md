@@ -97,37 +97,40 @@ None
 
 Why does it print a `None` between the elements of the lists? Remember, these functions don't return any values! Thus, `print(displayElementsOf(list1))` doesn't actually have something to print!
 
-Note: A function does not execute the rest of its code if a return statement is encountered
+!!! note "Functions are Minimalist"
+    A function does not execute the rest of its code if a return statement is encountered
 
-```py
-def function(number):
-    return number*2
-    print(number/2)
-
-print(function(5))
-```
-Output:
-```
-10
-```
+    ```py
+    def function(number):
+        return number*2
+        print(number/2)
+    
+    print(function(5))
+    ```
+    Output:
+    ```
+    10
+    ```
 
 === "Practise"
 
     Write a function to calculate the factorial of a number.
     Use the function to then find the factorials of all the numbers from 1 to 20
 
-    Note: The factorial of a number n, represented by n! is given by: $n! = n\cdot(n-1)\cdot(n-2)...1$. For example, $5! = 5\cdot4\cdot3\cdot2\cdot1 = 120$ and $0! = 1$.
+    !!! question "What's a factorioal again?"
+        The factorial of a number n, represented by n! is given by: $n! = n\cdot(n-1)\cdot(n-2)...1$. For example, $5! = 5\cdot4\cdot3\cdot2\cdot1 = 120$ and $0! = 1$.
 
 === "Answer"
     Write a function to calculate the factorial of a number.
     Use the function to then find the factorials of all the numbers from 1 to 20
 
-    Note: The factorial of a number n, represented by n! is given by: $n! = n\cdot(n-1)\cdot(n-2)...1$. For example, $5! = 5\cdot4\cdot3\cdot2\cdot1 = 120$ and $0! = 1$.
+    !!! question "What's a factorioal again?"
+        The factorial of a number n, represented by n! is given by: $n! = n\cdot(n-1)\cdot(n-2)...1$. For example, $5! = 5\cdot4\cdot3\cdot2\cdot1 = 120$ and $0! = 1$.
 
     ```py
-    def factorial(a):
+    def factorial(n):
         facto = 1
-        for i in range(1, a+1):
+        for i in range(2, n+1):
             facto*=i
         return facto
 
@@ -264,3 +267,145 @@ def factorial(number):
     2
     3
     ```
+
+## 4. Exceptions
+
+Exceptions are problems that a program might run into during its execution. Take division as an example:
+
+```py
+def divide(a, b):
+    return a/b
+c = divide(10, 0)
+print("c:", c)
+```
+
+What happens if we try to run this code?
+
+```py
+Traceback (most recent call last):
+  File "C:\Users\Divy\My Stuff\mkdocs\IntroToPython\test.py", line 3, in <module>
+    c = divide(10, 0)
+        ^^^^^^^^^^^^^
+  File "C:\Users\Divy\My Stuff\mkdocs\IntroToPython\test.py", line 2, in divide
+    return a/b
+           ~^~
+ZeroDivisionError: division by zero
+```
+
+Our program crashes (nothing further is executed) when the error is encountered and python yells at us for trying to divide by 0. `#!py ZeroDivisionError` is an exception.
+
+### 4.1. The `#!py raise` statement
+
+So, how do we make use of Exceptions ourselves? If you have a custom operation that might give an error for certain inputs, we can do that as follows:
+
+```py
+def factorial(n):
+    # factorial is not defined for negative numbers or for anything other than ints!
+    if n < 0 or type(n) is not int:
+        raise ValueError("Factorial can only be computed for non negative integers")
+    facto = 1
+    for i in range(2, n+1):
+        facto*=i
+    return facto
+```
+
+### 4.2. The `#!py try except else finally` statement
+
+Now it would be very inconvenient if every time a program ran into an exception, it just crashed without doing anything else. It is the programmer's job to ensure that errors are dealt with and that they do not make a program crash. How *does* one deal with errors then?
+
+We use the `try except` statement:
+
+```py
+try:
+    c = divide(10, 0)
+    print("c:", c)
+except ZeroDivisionError:
+    # runs if a ZeroDivisionError is encountered
+    print("Cannot divide by 0!")
+
+print("Other things still run!")
+```
+
+!!! note "Catch Me If You Can!"
+    In other languages, `#!py except` is often called `catch`, and you might hear programmers referring to `#!py except` as `catch`, they are the same thing!
+
+Now this does not mean that the program is safe, sometimes a single function call raises different errors for different problems, each one of them must be handled:
+
+```py
+try:
+    c = divide(10, 0)
+    print("c:", c)
+except ValueError as e:
+    # runs if a ValueError is encountered
+    # note: divide doesn't actually ever produce one,
+    # so this except block is redundant. This is just an example!
+    ...
+except ZeroDivisionError as e:
+    # runs if a ZeroDivisionError is encountered
+    print("Cannot divide by 0!")
+
+print("Other things still run!")
+```
+
+Sometimes, you might want to run a piece of code regardless of any errors occurring in a try block.
+
+```py
+try:
+    c = divide(10, 0) 
+finally:
+    # runs even if there is an error
+    print("finally")
+
+print("Other things DO NOT run!")
+```
+
+This program still crashes, but it prints `#!py finally` before doing so.
+
+If you might want to run a piece of code only when an error did NOT occur, that can be achieved by adding an `#!py else`:
+
+```py
+try:
+    c = divide(10, 0)
+except ZeroDivisionError:
+    # runs if a ZeroDivisionError is encountered
+    print("Cannot divide by 0!")
+else:
+    # Only runs if NO error occurred
+    # Cannot be used before an except block,
+    # finally must come AFTER else if you want to write one
+    print("c:", c)
+```
+
+You might say that it is equivalent to:
+
+```py
+try:
+    c = divide(10, 0)
+    print("c:", c)
+except ZeroDivisionError:
+    # runs if a ZeroDivisionError is encountered
+    print("Cannot divide by 0!")
+```
+And while that is true (they are equivalent), writing it with an `#!py else` is preferred, because we do not want to unintentionally catch exceptions produced by the rest of the code!
+
+Consider the following example:
+
+```py
+try:
+    c = divide(0, 1)
+    divide(2, c) # did we intend to catch this division by zero error as well?
+except ZeroDivisionError:
+    # runs if a ZeroDivisionError is encountered
+    print("Cannot divide by 0!")
+```
+
+If we used an `#!py else`, our intentions would be more explicit!
+
+!!! info "Error vs Exception"
+    Keen readers would've noticed that the word Exception has been used in the heading of this section, but the examples contain things python calls "Error"s
+
+    What is the difference between an Error and an Exception?
+
+    Technically, there is none. However, conventionally, an error should never be caught and handled at runtime, they should be *prevented* to begin with. Exceptions are the ones which are meant to be caught at runtime, but for educational purposes and keeping things simple in the examples above, an **Exception** to this convention has been made in this article.
+
+    This is not a well known convention, and it is common to run into code where errors are used incorrectly on the internet.

@@ -11,9 +11,7 @@ Remember, a computer is a dumb machine. We can't just simply say to a computer i
 ## 3. Requirements
 
 1. Python:
-
     To use python, you must install it first. Find the download [here](https://www.python.org/downloads/ "Python Download")
 
 2. A text editor/IDE of choice:
-
-    To write python code, we need a text editor or an IDE. I will be using VS Code for today which can be found [here](https://code.visualstudio.com/download "VSC Download")
+    To write python code, we need a text editor or an IDE. [PyCharm Community Edition](https://www.jetbrains.com/edu-products/download/other-PCE.html "PCE Download") is free and highly recommended!
